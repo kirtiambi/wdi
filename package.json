@@ -1,0 +1,28 @@
+{
+  "name": "wdi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@wdio/cli": "^7.19.4",
+    "@wdio/cucumber-framework": "^7.19.4",
+    "@wdio/local-runner": "^7.19.4",
+    "@wdio/selenium-standalone-service": "^7.19.5",
+    "chromedriver": "^100.0.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "wdio-chromedriver-service": "^7.3.2",
+    "wdio-timeline-reporter": "^5.1.4"
+  },
+  "dependencies": {
+    "cucumber": "^7.0.0-rc.0",
+    "ts-treemap": "^1.1.0"
+  }
+}

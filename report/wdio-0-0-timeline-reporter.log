@@ -1,0 +1,139 @@
+{
+  "start": "2022-04-15T18:22:33.868Z",
+  "end": "2022-04-15T18:22:48.765Z",
+  "capabilities": {
+    "browserName": "Chrome",
+    "browserVersion": "100.0.4896.88",
+    "platformName": "win32",
+    "platformVersion": "10.0.22000",
+    "goog:chromeOptions": {
+      "debuggerAddress": "localhost:64984"
+    },
+    "sessionId": "4f286db7-14cc-475d-bb29-082d53760ca1"
+  },
+  "baseUrl": "http://localhost",
+  "framework": "cucumber",
+  "duration": 14897,
+  "suites": [
+    {
+      "title": "As a user, I can open travel booking site",
+      "duration": 14744,
+      "start": "2022-04-15T18:22:34.015Z",
+      "end": "2022-04-15T18:22:48.759Z",
+      "tests": [
+        {
+          "title": "Given I open browser and navigate to travel booking site",
+          "start": "2022-04-15T18:22:34.016Z",
+          "end": "2022-04-15T18:22:36.767Z",
+          "duration": 2751,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "When User clicks on From City option",
+          "start": "2022-04-15T18:22:36.767Z",
+          "end": "2022-04-15T18:22:37.048Z",
+          "duration": 281,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Then User is able select from City",
+          "start": "2022-04-15T18:22:37.048Z",
+          "end": "2022-04-15T18:22:38.757Z",
+          "duration": 1709,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "When User clicks on To City option",
+          "start": "2022-04-15T18:22:38.757Z",
+          "end": "2022-04-15T18:22:38.974Z",
+          "duration": 217,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Then User is able to select To City",
+          "start": "2022-04-15T18:22:38.974Z",
+          "end": "2022-04-15T18:22:41.180Z",
+          "duration": 2206,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "When User clicks on Travellers option",
+          "start": "2022-04-15T18:22:41.180Z",
+          "end": "2022-04-15T18:22:42.274Z",
+          "duration": 1094,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Then User selects travellers information from selection pop up",
+          "start": "2022-04-15T18:22:42.274Z",
+          "end": "2022-04-15T18:22:43.948Z",
+          "duration": 1674,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Then User selects option to serach and lands on new page",
+          "start": "2022-04-15T18:22:43.948Z",
+          "end": "2022-04-15T18:22:44.069Z",
+          "duration": 121,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "When User gets List of flight prices with dates and user selects cheapest flight",
+          "start": "2022-04-15T18:22:44.069Z",
+          "end": "2022-04-15T18:22:48.731Z",
+          "duration": 4662,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Then User is able to see cheapest flight details",
+          "start": "2022-04-15T18:22:48.731Z",
+          "end": "2022-04-15T18:22:48.756Z",
+          "duration": 25,
+          "state": "passed",
+          "screenshots": []
+        }
+      ],
+      "hooks": [
+        {
+          "start": "2022-04-15T18:22:34.015Z",
+          "end": "2022-04-15T18:22:34.016Z",
+          "duration": 1,
+          "title": "",
+          "associatedSuite": "0"
+        },
+        {
+          "start": "2022-04-15T18:22:48.757Z",
+          "end": "2022-04-15T18:22:48.758Z",
+          "duration": 1,
+          "title": "",
+          "associatedSuite": "0"
+        }
+      ]
+    },
+    {
+      "title": "Travel booking webpage",
+      "duration": 14762,
+      "start": "2022-04-15T18:22:33.998Z",
+      "end": "2022-04-15T18:22:48.760Z",
+      "tests": [],
+      "hooks": []
+    }
+  ],
+  "specs": [
+    "D:\\Kirti_Study\\infy\\workspace\\wdi\\features\\travel.feature"
+  ],
+  "state": {
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0
+  }
+}
