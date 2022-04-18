@@ -107,7 +107,7 @@ exports.config= {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -147,10 +147,12 @@ exports.config= {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: [
-           
-            [TimelineService],
-    ],
+    services: [[TimelineService],
+    ['chromedriver', {
+        logFileName: 'wdio-chromedriver.log', // default
+        outputDir: 'driver-logs', // overwrites the config.outputDir
+        args: ['silent']
+    }]],
    
     
     // Framework you want to run your specs with.
@@ -182,16 +184,15 @@ exports.config= {
             resize: false,
             reductionRatio: 2
         },
-        
-        screenshotStrategy: 'none'
-    }]],
-    
-    
+        screenshotStrategy: 'ss'
+         }]],
+  
+    // screenShotPath :'./screenshots/',
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/travel.steps.ts'],
+        require: ['./features/step-definitions/travel.steps.ts','./features/step-definitions/hotel.steps.ts'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -342,9 +343,11 @@ exports.config= {
      * @param {Array} args arguments that command would receive
      * @param {Number} result 0 - command success, 1 - command error
      * @param {Object} error error object if any
-     */
-    // afterCommand: function (commandName, args, result, error) {
-    // },
+     
+     afterCommand: function (commandName: string, args: Array<any>, result: number, error: object) {
+            browser.takeScreenshot();
+         
+     },
     /**
      * Gets executed after all tests are done. You still have access to all global variables from
      * the test.
