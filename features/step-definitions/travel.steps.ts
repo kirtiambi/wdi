@@ -50,7 +50,7 @@ Then('User selects travellers information from selection pop up', async () => {
   
 })
 
-Then('User selects option to serach and lands on new page', async () => {
+Then('User selects option to search and lands on new page', async () => {
   await TravelHome.searchInfo();
   await browser.takeScreenshot();
 })

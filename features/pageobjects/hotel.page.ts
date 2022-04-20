@@ -59,12 +59,12 @@ class HotelDetails extends Page {
 
     public get selectCheckIndate() {
 
-        return $("//*[contains(@aria-label,'Jun 20 2022')]")
+        return $("//*[contains(@aria-label,'Apr 24 2022')]")
 
     }
 
     public get selectCheckoutDate() {
-        return $("//*[contains(@aria-label,'Jun 23 2022')]")
+        return $("//*[contains(@aria-label,'Apr 28 2022')]")
     }
 
     public get nextBtnInCalender() {
@@ -99,45 +99,60 @@ class HotelDetails extends Page {
         return $('//*[@id="hsw_search_button"]')
     }
 
+    public get hotelDetailsPageHeading()
+    {
+        return $("//*[contains(@id,'Hotels, Villas, Apartments and more')]")
+    }
+
     public get showMoreBtn() {
         return $('//*[@id="hlistpg_proptypes_show_more"]')
     }
+   public get starSelection()
+   {
+       return $('//*[@id="STAR_CATEGORY"]/ul/li[4]/span[1]/label/div/span');
+   }
 
+   public get sortByOption()
+   {
+       return $('//*[@id="hlistpg_sortby_option"]');
+   }
+   public get sortLowToHigh()
+   {
+        return $('//*[@id="hlistpg_sortby_option"]/ul/li[2]');
+   }
     public get displayHotelDetails() {
         return $('//*[@id="Listing_hotel_0"]')
     }
 
 
 
-    public async selectHotelDetails() {
+    public async selectHotelDetails(City:string) {
         await (await this.cityName).doubleClick();
         const cityNameInput = await this.enterCityNameInputBox;
         expect(cityNameInput).toBeExisting();
-        await setInputValue(cityNameInput, 'Srinagar')
-        await delay(1000);
+        await setInputValue(cityNameInput, City)
+        browser.takeScreenshot();
+        await delay(300);
         await cityNameInput.keys('ArrowDown')
         await cityNameInput.keys('Enter')
-        await delay(100)
+        await delay(500)
         browser.takeScreenshot();
 
     }
 
     public async  menuClick() {
          await this.hotels.doubleClick();
-         await delay(100)
+         await delay(200)
          browser.takeScreenshot();
     }
 
     public async selectDateAndGuestInfo() {
 
         await (await this.checkIndate).doubleClick();
-        await (await this.nextBtnInCalender).click();
+       // await (await this.nextBtnInCalender).click();
         await (await this.selectCheckIndate).click();
         await (await this.selectCheckoutDate).click();
-        await delay(1000);
-        // var $input = $('.datepicker')
-        // Use the picker object directly.
-        // var picker = $input.pickadate('picker')
+        await delay(500);
 
         await (await this.clickRoomsandGuests).doubleClick();
         await (await this.selectAdult).click();
@@ -146,15 +161,16 @@ class HotelDetails extends Page {
         const childage1 = await this.child1age;
         childage1.selectByAttribute("value", "5");
         await (await this.child2age).selectByAttribute("value", "2");
+        browser.takeScreenshot();
         await (await this.applyBtn).click();
-        await delay(1000);
+        await delay(500);
         browser.takeScreenshot();
         await (await this.search).click();
 
     }
 
     public async validateHotelDetailsPage() {
-        const hoteldetails = $("//*[contains(@id,'Hotels, Villas, Apartments and more')]")
+        const hoteldetails = await this.hotelDetailsPageHeading;
         if (hoteldetails.isDisplayed)
             console.log("Hotel details are displayed.")
         await delay(100)
@@ -163,29 +179,32 @@ class HotelDetails extends Page {
 
     public async selectHotelOptions() {
         await (await this.showMoreBtn).click();
-        await delay(2000)
-        //  await (await $("//*[@id='STAR_CATEGORY']:nth child(4)")).click();
-        const StarHotel = $('//*[@id="STAR_CATEGORY"]/ul/li[4]/span[1]');
-        // (await StarHotel).isDisplayedInViewport();
-        (await StarHotel).scrollIntoView();
-        (await StarHotel).waitForDisplayed();
+        await delay(500)
+        
+        const threeStarHotel = await this.starSelection;
+       await delay(500);
 
-        console.log("3 star selection is displayed" + StarHotel.isDisplayedInViewport())
+        console.log("3 star hotel is displayed" + threeStarHotel.isDisplayedInViewport())
 
-        await (await StarHotel).doubleClick();
-        await delay(1000);
-        await (await $('//*[@id="hlistpg_sortby_option"]')).click();
-        await delay(1000);
-        await (await $('//*[@id="hlistpg_sortby_option"]/ul/li[2]')).click();
-        await delay(1000);
-        browser.takeScreenshot()
+        await (await threeStarHotel).doubleClick();
+        console.log("3 star hotel selected"+threeStarHotel.isSelected())
+        await delay(500);
+        browser.takeScreenshot();
+        if(threeStarHotel.isSelected())
+        {
+            await (await this.sortByOption).click();
+            await delay(500);
+            await (await this.sortLowToHigh).click();
+            await delay(500);
+            browser.takeScreenshot()
+        }
 
-    }
+ }
 
     public async displayCheapestHotelDetails() {
         const chepestHotel = this.displayHotelDetails;
         console.log("Chepaest hotel is" + (await chepestHotel.getText()).valueOf())
-        await delay(1000);
+        await delay(500);
         browser.takeScreenshot()
     }
 

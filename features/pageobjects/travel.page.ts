@@ -8,8 +8,6 @@ const delay = async (ms: number) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
-
 const setInputValue = async (el: ElementSync, value: string) => {
     try {
         await el.clearValue()
@@ -73,8 +71,13 @@ class TravelHome extends Page {
         return $$("//*[contains(@class, 'blackFont fontSize12 appendBottom3')]");
     }
     public get getNextPriceList() {
-        return $("//*[@id='glider-next-3']");
+        return $("//*[contains(@id, 'glider-next')]");
     }
+
+    public get getPreviousPriceList() {
+        return $("//*[contains(@id, 'glider-prev')]");
+    }
+
 
     public get search() {
         return $("//*[text()='Search']");
@@ -92,7 +95,7 @@ class TravelHome extends Page {
     public async setvalueFromCity(fromCity: string) {
         const fromSelector = await this.fromCityInputBox;
         await setInputValue(fromSelector, fromCity)
-        console.log(" #####################################" + await fromSelector.getValue())
+        console.log("From City : " + await fromSelector.getValue())
         await delay(1000);
         await browser.takeScreenshot();
         await fromSelector.keys('ArrowDown')
@@ -107,7 +110,7 @@ class TravelHome extends Page {
         const toSelector = await this.toCityInputBox;
         await delay(500);
         await setInputValue(toSelector, toCity)
-        console.log(" #####################################" + await toSelector.getValue())
+        console.log("To City : " + await toSelector.getValue())
         await delay(1000);
         await toSelector.keys('ArrowDown')
         await toSelector.keys('Enter')
@@ -120,9 +123,9 @@ class TravelHome extends Page {
 
     public async selectTravellersInfo() {
         await this.adultsInfo.click()
-        await delay(300);
+        await delay(200);
         await this.childInfo.click()
-        await delay(300);
+        await delay(200);
         await browser.takeScreenshot();
         await this.applyBtn.click();
     }
@@ -134,40 +137,76 @@ class TravelHome extends Page {
     }
 
     public async getFlightPriceList() {
-      /* for (let i = 0; i < 3; i++) {
-            await this.getNextPriceList.click();
-            await delay(500);
+        const priceToElementMap = new TreeMap<number, WebdriverIO.Element>()
+        const priceToIndexMap = new TreeMap<number, number>()
+        const currentPagePriceList = await this.getPriceList;
+        var pageScrollCount = 20;
 
-        } */
-        const priceList = await this.getPriceList;
-        console.error(" Lenght @@@@@" + priceList.length)
-        const treeMap = new TreeMap<string, WebdriverIO.Element>()
-        for (let i = 0; i < priceList.length-1; i++) {
-            var  price = await priceList[i].nextElement().getText();
-
+        for (let i = 0; i < currentPagePriceList.length; i++) {
+            var  price = await currentPagePriceList[i].nextElement().getText();
+            price = price.replace('₹ ','');
+            price = price.replace(',','');
+            
             if(price == null || price == '--' || price.length == 0 || price == '' ){
-                console.log(" Do no conider value Prices ### "+ price)
+               // console.log(" Do no conider value Prices ### "+ price)
             }else{
-               // var  displayCheapestFlightDetails = await priceList[i].getText();
-              //  console.log("conider value Prices ### "+ displayCheapestFlightDetails)
-                treeMap.set(price, priceList[i]);
+                var numPrice = parseInt(price)
+                console.log("conider value Prices ### "+ numPrice)
+                if(!priceToElementMap.has(numPrice)){
+                    priceToElementMap.set(numPrice, currentPagePriceList[i]);
+                    priceToIndexMap.set(numPrice,0);
+                }
              }
            
         }
-        await browser.takeScreenshot();
-        console.log("Fiest Entry Details ###: "+  treeMap.size)
 
-            console.log("Cheapest element date >> "+ await treeMap.firstEntry()[1].getText())
-            //treeMap.firstEntry()[1].getValue().then(vall => console.log(vall))
+        console.log("Tree Map Size "+  priceToElementMap.size)
+
+        for (let j = 0; j < pageScrollCount; j++) {
+            await this.getNextPriceList.click();
+          //  await delay(100);
+            const nextPriceList = await this.getPriceList;
+            console.error(" Lenght @@@@@" + nextPriceList.length)
+            for (let i = 0; i < nextPriceList.length; i++) {
+                var price = await nextPriceList[i].nextElement().getText();
+                price = price.replace('₹ ','');
+                price = price.replace(',','');
+                if (price == null || price == '--' || price.length == 0 || price == '') {
+                   // console.log(" Do no conider value Prices ### " + price)
+                } else {
+                    // var  displayCheapestFlightDetails = await priceList[i].getText();
+                    var numPrice = parseInt(price)
+                    console.log("conider value Prices ### "+ numPrice)
+                    if (!priceToElementMap.has(numPrice)){
+                        priceToElementMap.set(numPrice, nextPriceList[i]);
+                        priceToIndexMap.set(numPrice,1 + j);
+                    }
+                }
+
+            }
+
+        } 
+        await browser.takeScreenshot();
+        console.log("Treemap size after "+  priceToElementMap.size)
+        var lowestPrice = priceToElementMap.firstEntry()[0];
+        var lowestPriceIndex = priceToIndexMap.get(lowestPrice); 
+        console.log("Cheapest element Price >> "+ lowestPrice)
+        console.log("Cheapest element Price >> "+ lowestPriceIndex)
+        for(let i = pageScrollCount  ; i > lowestPriceIndex ; i--){
+            await this.getPreviousPriceList.click();
+            await delay(500);
+        }
+       // await delay(500);
+        console.log("Cheapest element Date >> "+ await priceToElementMap.firstEntry()[1].getText())
+        priceToElementMap.firstEntry()[1].click();
+        await delay(500);
       
-        treeMap.firstEntry()[1].click();
-        await delay(1000);
     }
 
     public async displayCheapestFlightDetails() {
         const flightDetails = await this.flightDetails;
         console.log(" Cheapest flightDetails" + (await flightDetails.getText()).valueOf())
-        await delay(1000);
+        await delay(100);
     }
 
 }

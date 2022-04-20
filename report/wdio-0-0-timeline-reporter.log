@@ -1,16 +1,16 @@
 {
-  "start": "2022-04-18T04:45:31.031Z",
-  "end": "2022-04-18T04:46:15.775Z",
+  "start": "2022-04-20T04:49:41.066Z",
+  "end": "2022-04-20T04:51:18.710Z",
   "capabilities": {
     "acceptInsecureCerts": true,
     "browserName": "chrome",
     "browserVersion": "100.0.4896.88",
     "chrome": {
       "chromedriverVersion": "100.0.4896.60 (6a5d10861ce8de5fce22564658033b43cb7de047-refs/branch-heads/4896@{#875})",
-      "userDataDir": "C:\\Users\\Aniket\\AppData\\Local\\Temp\\scoped_dir34644_1708138755"
+      "userDataDir": "C:\\Users\\Aniket\\AppData\\Local\\Temp\\scoped_dir22500_1088904053"
     },
     "goog:chromeOptions": {
-      "debuggerAddress": "localhost:64126"
+      "debuggerAddress": "localhost:51977"
     },
     "networkConnectionEnabled": false,
     "pageLoadStrategy": "normal",
@@ -27,129 +27,129 @@
     "webauthn:extension:credBlob": true,
     "webauthn:extension:largeBlob": true,
     "webauthn:virtualAuthenticators": true,
-    "sessionId": "03fc6b6ecda86961188436a2daac677f"
+    "sessionId": "ecda6c860344c47c551c714d907c21da"
   },
   "host": "localhost",
   "port": 9515,
   "baseUrl": "http://localhost",
   "framework": "cucumber",
-  "duration": 44744,
+  "duration": 97644,
   "suites": [
     {
       "title": "As a user, I can open travel booking site",
-      "duration": 20181,
-      "start": "2022-04-18T04:45:31.439Z",
-      "end": "2022-04-18T04:45:51.620Z",
+      "duration": 77439,
+      "start": "2022-04-20T04:49:41.465Z",
+      "end": "2022-04-20T04:50:58.904Z",
       "tests": [
         {
           "title": "Given I open browser and navigate to travel booking site",
-          "start": "2022-04-18T04:45:31.442Z",
-          "end": "2022-04-18T04:45:35.060Z",
-          "duration": 3618,
+          "start": "2022-04-20T04:49:41.469Z",
+          "end": "2022-04-20T04:49:44.661Z",
+          "duration": 3192,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257135055.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430184658.jpeg"
           ]
         },
         {
           "title": "When User clicks on From City option",
-          "start": "2022-04-18T04:45:35.060Z",
-          "end": "2022-04-18T04:45:35.402Z",
-          "duration": 342,
+          "start": "2022-04-20T04:49:44.661Z",
+          "end": "2022-04-20T04:49:44.998Z",
+          "duration": 337,
           "state": "passed",
           "screenshots": []
         },
         {
           "title": "Then User is able select From BLR",
-          "start": "2022-04-18T04:45:35.402Z",
-          "end": "2022-04-18T04:45:37.753Z",
-          "duration": 2351,
+          "start": "2022-04-20T04:49:44.998Z",
+          "end": "2022-04-20T04:49:47.372Z",
+          "duration": 2374,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257137382.jpeg",
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257137749.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430187033.jpeg",
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430187369.jpeg"
           ]
         },
         {
           "title": "When User clicks on To City option",
-          "start": "2022-04-18T04:45:37.753Z",
-          "end": "2022-04-18T04:45:37.995Z",
-          "duration": 242,
+          "start": "2022-04-20T04:49:47.373Z",
+          "end": "2022-04-20T04:49:47.591Z",
+          "duration": 218,
           "state": "passed",
           "screenshots": []
         },
         {
           "title": "Then User is able to select To SXR",
-          "start": "2022-04-18T04:45:37.995Z",
-          "end": "2022-04-18T04:45:40.030Z",
-          "duration": 2035,
+          "start": "2022-04-20T04:49:47.591Z",
+          "end": "2022-04-20T04:49:49.734Z",
+          "duration": 2143,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257140026.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430189731.jpeg"
           ]
         },
         {
           "title": "When User clicks on Travellers option",
-          "start": "2022-04-18T04:45:40.030Z",
-          "end": "2022-04-18T04:45:41.046Z",
-          "duration": 1016,
+          "start": "2022-04-20T04:49:49.734Z",
+          "end": "2022-04-20T04:49:50.700Z",
+          "duration": 966,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257141043.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430190696.jpeg"
           ]
         },
         {
           "title": "Then User selects travellers information from selection pop up",
-          "start": "2022-04-18T04:45:41.046Z",
-          "end": "2022-04-18T04:45:42.299Z",
-          "duration": 1253,
+          "start": "2022-04-20T04:49:50.700Z",
+          "end": "2022-04-20T04:49:51.773Z",
+          "duration": 1073,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257142171.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430191644.jpeg"
           ]
         },
         {
-          "title": "Then User selects option to serach and lands on new page",
-          "start": "2022-04-18T04:45:42.299Z",
-          "end": "2022-04-18T04:45:47.663Z",
-          "duration": 5364,
+          "title": "Then User selects option to search and lands on new page",
+          "start": "2022-04-20T04:49:51.773Z",
+          "end": "2022-04-20T04:49:57.941Z",
+          "duration": 6168,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257147660.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430197938.jpeg"
           ]
         },
         {
           "title": "When User gets List of flight prices with dates and user selects cheapest flight",
-          "start": "2022-04-18T04:45:47.663Z",
-          "end": "2022-04-18T04:45:49.949Z",
-          "duration": 2286,
+          "start": "2022-04-20T04:49:57.941Z",
+          "end": "2022-04-20T04:50:57.614Z",
+          "duration": 59673,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257148894.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430249017.jpeg"
           ]
         },
         {
           "title": "Then User is able to see cheapest flight details",
-          "start": "2022-04-18T04:45:49.949Z",
-          "end": "2022-04-18T04:45:51.618Z",
-          "duration": 1669,
+          "start": "2022-04-20T04:50:57.614Z",
+          "end": "2022-04-20T04:50:58.902Z",
+          "duration": 1288,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257151613.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430258899.jpeg"
           ]
         }
       ],
       "hooks": [
         {
-          "start": "2022-04-18T04:45:31.441Z",
-          "end": "2022-04-18T04:45:31.442Z",
-          "duration": 1,
+          "start": "2022-04-20T04:49:41.466Z",
+          "end": "2022-04-20T04:49:41.468Z",
+          "duration": 2,
           "title": "",
           "associatedSuite": "0"
         },
         {
-          "start": "2022-04-18T04:45:51.618Z",
-          "end": "2022-04-18T04:45:51.619Z",
+          "start": "2022-04-20T04:50:58.902Z",
+          "end": "2022-04-20T04:50:58.903Z",
           "duration": 1,
           "title": "",
           "associatedSuite": "0"
@@ -158,90 +158,93 @@
     },
     {
       "title": "As a user, I want to check cheapest Hotel",
-      "duration": 23517,
-      "start": "2022-04-18T04:45:51.621Z",
-      "end": "2022-04-18T04:46:15.138Z",
+      "duration": 19415,
+      "start": "2022-04-20T04:50:58.906Z",
+      "end": "2022-04-20T04:51:18.321Z",
       "tests": [
         {
           "title": "Given I open browser and navigate to travel booking site",
-          "start": "2022-04-18T04:45:51.622Z",
-          "end": "2022-04-18T04:45:54.540Z",
-          "duration": 2918,
+          "start": "2022-04-20T04:50:58.907Z",
+          "end": "2022-04-20T04:51:01.500Z",
+          "duration": 2593,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257154536.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430261498.jpeg"
           ]
         },
         {
           "title": "When User selects Hotels option",
-          "start": "2022-04-18T04:45:54.540Z",
-          "end": "2022-04-18T04:45:54.884Z",
-          "duration": 344,
+          "start": "2022-04-20T04:51:01.500Z",
+          "end": "2022-04-20T04:51:02.058Z",
+          "duration": 558,
           "state": "passed",
           "screenshots": []
         },
         {
-          "title": "When User selects City",
-          "start": "2022-04-18T04:45:54.884Z",
-          "end": "2022-04-18T04:45:57.865Z",
-          "duration": 2981,
+          "title": "When User selects City Srinagar",
+          "start": "2022-04-20T04:51:02.058Z",
+          "end": "2022-04-20T04:51:04.620Z",
+          "duration": 2562,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257155237.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430262386.jpeg",
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430264043.jpeg"
           ]
         },
         {
           "title": "Then User selects date and guests option and click on serach",
-          "start": "2022-04-18T04:45:57.865Z",
-          "end": "2022-04-18T04:46:06.626Z",
-          "duration": 8761,
+          "start": "2022-04-20T04:51:04.621Z",
+          "end": "2022-04-20T04:51:11.524Z",
+          "duration": 6903,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257158194.jpeg",
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257161852.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430264879.jpeg",
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430266833.jpeg",
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430267681.jpeg"
           ]
         },
         {
           "title": "Then User is able to see Hotel details",
-          "start": "2022-04-18T04:46:06.626Z",
-          "end": "2022-04-18T04:46:06.733Z",
-          "duration": 107,
+          "start": "2022-04-20T04:51:11.524Z",
+          "end": "2022-04-20T04:51:11.650Z",
+          "duration": 126,
           "state": "passed",
           "screenshots": []
         },
         {
           "title": "When User selects 3 star hotel option and select filter to sort hotel details by Price Low to High",
-          "start": "2022-04-18T04:46:06.733Z",
-          "end": "2022-04-18T04:46:13.686Z",
-          "duration": 6953,
+          "start": "2022-04-20T04:51:11.650Z",
+          "end": "2022-04-20T04:51:16.471Z",
+          "duration": 4821,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257167162.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430272087.jpeg",
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430274727.jpeg"
           ]
         },
         {
           "title": "Then User is able to see cheapest hotel details",
-          "start": "2022-04-18T04:46:13.686Z",
-          "end": "2022-04-18T04:46:15.137Z",
-          "duration": 1451,
+          "start": "2022-04-20T04:51:16.471Z",
+          "end": "2022-04-20T04:51:18.319Z",
+          "duration": 1848,
           "state": "passed",
           "screenshots": [
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257174082.jpeg",
-            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650257175432.jpeg"
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430276709.jpeg",
+            "D:\\Kirti_Study\\infy\\workspace\\wdi\\report\\file-1650430278574.jpeg"
           ]
         }
       ],
       "hooks": [
         {
-          "start": "2022-04-18T04:45:51.621Z",
-          "end": "2022-04-18T04:45:51.622Z",
+          "start": "2022-04-20T04:50:58.906Z",
+          "end": "2022-04-20T04:50:58.907Z",
           "duration": 1,
           "title": "",
           "associatedSuite": "1"
         },
         {
-          "start": "2022-04-18T04:46:15.137Z",
-          "end": "2022-04-18T04:46:15.138Z",
+          "start": "2022-04-20T04:51:18.320Z",
+          "end": "2022-04-20T04:51:18.321Z",
           "duration": 1,
           "title": "",
           "associatedSuite": "1"
@@ -250,9 +253,9 @@
     },
     {
       "title": "Travel booking webpage",
-      "duration": 43758,
-      "start": "2022-04-18T04:45:31.381Z",
-      "end": "2022-04-18T04:46:15.139Z",
+      "duration": 96899,
+      "start": "2022-04-20T04:49:41.423Z",
+      "end": "2022-04-20T04:51:18.322Z",
       "tests": [],
       "hooks": []
     }

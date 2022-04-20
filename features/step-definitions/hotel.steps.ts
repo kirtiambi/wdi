@@ -12,9 +12,10 @@ When('User selects Hotels option', async () => {
     await HotelDetails.menuClick();
 });
 
-When('User selects City', async () => {
-    await HotelDetails.selectHotelDetails();
+When(/^User selects City (\w+)$/, async (City) => {
+    await HotelDetails.selectHotelDetails(City);
 })
+
 
 Then('User selects date and guests option and click on serach', async () => {
     await HotelDetails.selectDateAndGuestInfo();
